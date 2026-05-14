@@ -16,7 +16,9 @@
         button:hover { border-color: #888780; background: #f1efe8; }
         button.primary { background: #185FA5; color: white; border-color: #185FA5; }
         button.primary:hover { background: #0c447c; }
-        select, input[type="text"], textarea { padding: 8px 12px; border: 0.5px solid #b4b2a9; border-radius: 8px; font-family: inherit; font-size: 13px; }
+        button.danger { background: #E24B4A; color: white; border-color: #E24B4A; }
+        button.danger:hover { background: #A32D2D; }
+        select, input[type="text"], input[type="date"], textarea { padding: 8px 12px; border: 0.5px solid #b4b2a9; border-radius: 8px; font-family: inherit; font-size: 13px; }
         select:focus, input:focus, textarea:focus { outline: none; border-color: #185FA5; background: white; }
         .tabs { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 1px solid #d3d1c7; }
         .tab-btn { padding: 12px 16px; border: none; background: transparent; border-bottom: 2px solid transparent; cursor: pointer; font-size: 14px; color: #888780; transition: all 0.2s; }
@@ -31,53 +33,38 @@
         .project-name { font-size: 15px; font-weight: 500; flex: 1; }
         .badge { font-size: 11px; padding: 4px 8px; border-radius: 6px; font-weight: 500; white-space: nowrap; }
         .badge-priority { background: #e6f1fb; color: #185fa5; }
-        .badge-complete { background: #eaf3de; color: #3b6d11; }
-        .badge-blocked { background: #fcebeb; color: #a32d2d; }
-        .badge-discovery { background: #e6f1fb; color: #185fa5; }
-        .badge-building { background: #eaf3de; color: #639922; }
-        .badge-review { background: #faeeda; color: #ba7517; }
-        .badge-pending { background: #f1efe8; color: #5f5e5a; }
-        .project-meta { font-size: 12px; color: #888780; margin: 8px 0; }
         .progress-bar { width: 100%; height: 6px; background: #e6e5e0; border-radius: 3px; overflow: hidden; margin: 8px 0; }
         .progress-fill { height: 100%; background: #185fa5; border-radius: 3px; }
-        .detail-view { display: grid; grid-template-columns: 1fr 300px; gap: 24px; }
-        .detail-main { }
-        .detail-sidebar { background: white; padding: 16px; border-radius: 12px; border: 0.5px solid #d3d1c7; height: fit-content; }
-        .detail-section { background: white; padding: 16px; border-radius: 12px; border: 0.5px solid #d3d1c7; margin-bottom: 16px; }
+        .detail-view { padding: 20px; background: white; border-radius: 12px; border: 0.5px solid #d3d1c7; }
+        .detail-section { margin-bottom: 24px; padding: 16px; background: #f8f7f4; border-radius: 8px; }
         .detail-section h2 { font-size: 16px; font-weight: 500; margin-bottom: 12px; }
-        .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 12px; }
-        .kpi-card { background: #f1efe8; padding: 12px; border-radius: 8px; font-size: 12px; }
-        .kpi-label { color: #888780; margin-bottom: 4px; }
-        .kpi-value { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-        table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        th { text-align: left; padding: 8px 0; font-weight: 500; color: #888780; font-size: 12px; border-bottom: 0.5px solid #d3d1c7; }
-        td { padding: 10px 0; border-bottom: 0.5px solid #d3d1c7; }
-        .status-badge { font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 500; display: inline-block; }
+        .detail-section h3 { font-size: 14px; font-weight: 500; margin: 12px 0 8px 0; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 500; margin-bottom: 4px; color: #888780; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 8px; border: 0.5px solid #b4b2a9; border-radius: 6px; font-size: 13px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .task-item { background: white; padding: 12px; border-radius: 6px; border: 0.5px solid #d3d1c7; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .task-info { flex: 1; }
+        .task-owner { font-size: 12px; color: #888780; margin-top: 4px; }
+        .task-status { font-size: 11px; padding: 3px 6px; border-radius: 4px; font-weight: 500; display: inline-block; }
         .status-complete { background: #eaf3de; color: #3b6d11; }
         .status-inprogress { background: #faeeda; color: #ba7517; }
         .status-pending { background: #f1efe8; color: #5f5e5a; }
-        .gantt-container { background: white; padding: 16px; border-radius: 12px; border: 0.5px solid #d3d1c7; overflow-x: auto; }
-        .gantt { display: flex; font-size: 12px; margin-top: 8px; }
-        .gantt-label { width: 200px; flex-shrink: 0; padding: 8px; border-right: 0.5px solid #d3d1c7; }
-        .gantt-timeline { flex: 1; position: relative; height: 32px; background: linear-gradient(90deg, #f1efe8 1px, transparent 1px); background-size: 50px; border-right: 0.5px solid #d3d1c7; }
-        .gantt-bar { position: absolute; height: 24px; top: 4px; background: #185fa5; border-radius: 4px; opacity: 0.8; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+        th { text-align: left; padding: 8px 0; font-weight: 500; color: #888780; font-size: 12px; border-bottom: 0.5px solid #d3d1c7; }
+        td { padding: 10px 0; border-bottom: 0.5px solid #d3d1c7; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto; }
         .modal.show { display: flex; }
-        .modal-content { background: white; border-radius: 12px; padding: 24px; width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; }
-        .form-group { margin-bottom: 16px; }
-        .form-group label { display: block; font-size: 12px; font-weight: 500; margin-bottom: 6px; color: #888780; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .modal-content { background: white; border-radius: 12px; padding: 24px; width: 90%; max-width: 700px; margin: 20px auto; }
         .button-group { display: flex; gap: 12px; margin-top: 16px; }
         .button-group button { flex: 1; }
-        .note-item { background: #faeeda; padding: 12px; border-radius: 8px; margin-bottom: 8px; font-size: 13px; }
-        .scratchpad { background: #FAEEDA; padding: 12px; border-radius: 8px; font-size: 13px; color: #4A1B0C; min-height: 100px; border: 0.5px solid #F0997B; }
-        .meta-grid { display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 12px; }
-        .meta-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid #d3d1c7; }
-        .meta-label { color: #888780; }
-        .export-btn { background: #639922; color: white; border-color: #639922; }
-        .export-btn:hover { background: #3b6d11; }
-        @media print { body { background: white; } .toolbar, .tabs, .filters, button { display: none !important; } }
+        .close-btn { background: #f1efe8; color: #2c2c2a; border-color: #b4b2a9; float: right; padding: 4px 8px; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .kpi-item { background: white; padding: 12px; border-radius: 6px; border: 0.5px solid #d3d1c7; margin-bottom: 8px; }
+        .scratchpad { background: #FAEEDA; padding: 12px; border-radius: 8px; border: 0.5px solid #F0997B; min-height: 100px; }
+        .action-buttons { display: flex; gap: 6px; justify-content: flex-end; }
+        .action-buttons button { padding: 4px 8px; font-size: 12px; }
+        @media print { .toolbar, .tabs, .filters, button { display: none !important; } }
     </style>
 </head>
 <body>
@@ -86,7 +73,7 @@
             <h1>CS Operations — Project Tracker</h1>
             <div class="toolbar">
                 <button onclick="showModal('newProject')" class="primary">+ New Project</button>
-                <button onclick="exportData();" class="export-btn">↓ Export</button>
+                <button onclick="exportData();">↓ Export</button>
                 <button onclick="document.getElementById('importFile').click();">↑ Import</button>
                 <button onclick="window.print();">🖨 Print</button>
                 <input type="file" id="importFile" style="display:none;" accept=".json" onchange="importData(event)">
@@ -95,8 +82,7 @@
 
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab('dashboard')">Dashboard</button>
-            <button class="tab-btn" onclick="switchTab('gantt')">Timeline</button>
-            <button class="tab-btn" onclick="switchTab('detail')">Project Details</button>
+            <button class="tab-btn" onclick="switchTab('project')">Project Details</button>
             <button class="tab-btn" onclick="switchTab('help')">Help</button>
         </div>
 
@@ -105,7 +91,7 @@
             <div class="filters">
                 <div class="filter-group">
                     <label>Filter by phase:</label>
-                    <select onchange="applyFilters()">
+                    <select onchange="renderDashboard()">
                         <option value="">All phases</option>
                         <option value="Discovery">Discovery</option>
                         <option value="Building/Execution">Building/Execution</option>
@@ -115,155 +101,73 @@
                         <option value="Completed">Completed</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label>Show:</label>
-                    <select onchange="applyFilters()">
-                        <option value="all">All projects</option>
-                        <option value="priority">Priority only</option>
-                        <option value="active">Active only</option>
-                    </select>
-                </div>
             </div>
             <div id="dashboard" class="dashboard"></div>
         </div>
 
-        <!-- Timeline Tab -->
-        <div id="gantt-tab" class="tab-content" style="display:none;">
-            <div class="gantt-container">
-                <div style="display: flex; margin-bottom: 16px; font-size: 12px; font-weight: 500;">
-                    <div style="width: 200px;">Project</div>
-                    <div style="flex: 1; display: flex; justify-content: space-between; padding: 0 16px;">
-                        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span>
-                    </div>
-                </div>
-                <div id="gantt-chart"></div>
-            </div>
-        </div>
-
-        <!-- Detail Tab -->
-        <div id="detail-tab" class="tab-content" style="display:none;">
-            <div style="margin-bottom: 16px;">
-                <label for="projectSelect" style="font-size: 12px; color: #888780;">Select a project:</label>
-                <select id="projectSelect" onchange="loadProjectDetail()" style="margin-top: 6px; width: 300px;">
-                    <option value="">Choose project...</option>
+        <!-- Project Details Tab -->
+        <div id="project-tab" class="tab-content" style="display:none;">
+            <div style="margin-bottom: 20px;">
+                <label style="font-size: 12px; color: #888780; font-weight: 500;">Select Project:</label>
+                <select id="projectSelect" onchange="loadProject()" style="margin-top: 8px; width: 300px;">
+                    <option value="">Choose a project...</option>
                 </select>
             </div>
-            <div id="detail-content"></div>
+            <div id="projectDetail"></div>
         </div>
 
         <!-- Help Tab -->
         <div id="help-tab" class="tab-content" style="display:none;">
             <div style="max-width: 800px;">
-                <h2 style="font-size: 20px; font-weight: 500; margin-bottom: 20px;">How to Use the Project Tracker</h2>
+                <h2 style="font-size: 20px; font-weight: 500; margin-bottom: 20px;">How to Use</h2>
 
                 <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">📊 Dashboard Tab</h3>
-                    <p style="margin: 0 0 12px 0; font-size: 14px;">View all your CS projects at a glance. Each project card shows:</p>
-                    <ul style="margin: 0 0 12px 0; padding-left: 20px; font-size: 14px;">
-                        <li><strong>Project name</strong> — Click the card to view full details</li>
-                        <li><strong>Requester</strong> — Which team submitted the request</li>
-                        <li><strong>Phase badge</strong> — Discovery, Building, Reviewing, Blocked, etc.</li>
-                        <li><strong>Owner</strong> — Who's assigned to lead this project</li>
-                        <li><strong>Progress bar</strong> — Visual representation of project completion</li>
-                        <li><strong>Priority badge</strong> — Red flag if this is a priority for the current quarter</li>
-                        <li><strong>Due date</strong> — Expected completion date</li>
-                    </ul>
-                    <p style="margin: 0; font-size: 14px;"><strong>Filters:</strong> Use the filter dropdowns to show projects by phase, priority status, or active projects only.</p>
+                    <h3>📊 Dashboard</h3>
+                    <p>Click any project card to view and edit its details. Use filters to narrow by phase.</p>
                 </div>
 
                 <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">📅 Timeline Tab</h3>
-                    <p style="margin: 0; font-size: 14px;">Visual Gantt chart showing all projects over time. Each bar represents a project's timeline from start to expected completion. Color represents phase (blue=Discovery, green=Building, orange=Reviewing, red=Blocked).</p>
-                </div>
-
-                <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">🔍 Project Details Tab</h3>
-                    <p style="margin: 0 0 12px 0; font-size: 14px;">Select a project from the dropdown to view its complete information including description, KPIs, subtasks, decisions log, and notes.</p>
-                </div>
-
-                <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">➕ Adding a New Project</h3>
-                    <ol style="margin: 0; padding-left: 20px; font-size: 14px;">
-                        <li style="margin-bottom: 8px;">Click the <strong>"+ New Project"</strong> button in the top toolbar</li>
-                        <li style="margin-bottom: 8px;">Fill in the project details:
-                            <ul style="margin-top: 6px; padding-left: 20px;">
-                                <li>Project Name (required)</li>
-                                <li>Phase (Discovery, Building, Reviewing, etc.)</li>
-                                <li>Requester (which team requested this)</li>
-                                <li>Stakeholder (who oversees it)</li>
-                                <li>Owner (who's running it day-to-day)</li>
-                                <li>Expected Completion date</li>
-                                <li>Priority checkbox (mark if priority for this quarter)</li>
-                                <li>Description of the project</li>
-                            </ul>
-                        </li>
-                        <li>Click <strong>"Save Project"</strong></li>
-                    </ol>
-                </div>
-
-                <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">✏️ Editing a Project</h3>
-                    <ol style="margin: 0; padding-left: 20px; font-size: 14px;">
-                        <li style="margin-bottom: 8px;">On the Dashboard, click the <strong>"Edit"</strong> button on any project card</li>
-                        <li style="margin-bottom: 8px;">Update any fields you need to change</li>
-                        <li>Click <strong>"Save Project"</strong> to apply changes</li>
-                    </ol>
-                    <p style="margin: 12px 0 0 0; font-size: 13px; color: #888780;"><em>Note: Subtasks, KPIs, notes, and decisions can be edited by clicking the project to view its full details, then making inline edits (coming in future updates).</em></p>
-                </div>
-
-                <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">💾 Exporting & Importing Data</h3>
-                    <p style="margin: 0 0 12px 0; font-size: 14px;"><strong>Export:</strong> Click the <strong>"↓ Export"</strong> button to download all your projects as a JSON file. Perfect for backup or sharing with your team.</p>
-                    <p style="margin: 0 0 12px 0; font-size: 14px;"><strong>Import:</strong> Click the <strong>"↑ Import"</strong> button and select a previously exported JSON file to load projects. Useful for syncing updates from team members.</p>
-                </div>
-
-                <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">🖨️ Printing & Sharing</h3>
-                    <p style="margin: 0 0 12px 0; font-size: 14px;"><strong>Print:</strong> Click the <strong>"🖨 Print"</strong> button to print the current view or save as PDF in your browser.</p>
-                    <p style="margin: 0; font-size: 14px;"><strong>Share with Google Drive:</strong></p>
-                    <ol style="margin: 6px 0 0 0; padding-left: 20px; font-size: 14px;">
-                        <li>Upload this HTML file to a shared Google Drive folder</li>
-                        <li>Team members can open it directly in their browser</li>
-                        <li>Each person edits their local copy, then exports JSON</li>
-                        <li>Share the exported JSON file to sync changes</li>
-                        <li>Team members import the JSON to get the latest updates</li>
-                    </ol>
-                </div>
-
-                <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">📋 Project Phases Explained</h3>
-                    <div style="font-size: 14px; line-height: 1.8;">
-                        <p style="margin: 0 0 8px 0;"><strong style="color: #378ADD;">Discovery</strong> — Research and scoping phase. Requirements being gathered.</p>
-                        <p style="margin: 0 0 8px 0;"><strong style="color: #639922;">Building/Execution</strong> — Active development. Team is actively working.</p>
-                        <p style="margin: 0 0 8px 0;"><strong style="color: #BA7517;">Reviewing</strong> — Solution complete, undergoing review and testing.</p>
-                        <p style="margin: 0 0 8px 0;"><strong style="color: #E24B4A;">Blocked</strong> — Waiting on external dependencies or resources.</p>
-                        <p style="margin: 0 0 8px 0;"><strong style="color: #888780;">Pending</strong> — Documented but not yet started. In the queue.</p>
-                        <p style="margin: 0 0 8px 0;"><strong style="color: #0F6E56;">Completed</strong> — Project finished and closed.</p>
-                    </div>
-                </div>
-
-                <div class="detail-section">
-                    <h3 style="font-size: 16px; font-weight: 500; margin-bottom: 12px;">💡 Tips & Best Practices</h3>
-                    <ul style="margin: 0; padding-left: 20px; font-size: 14px;">
-                        <li style="margin-bottom: 8px;">Update phases regularly to keep the tracker current</li>
-                        <li style="margin-bottom: 8px;">Use the Priority checkbox for Q-specific initiatives only</li>
-                        <li style="margin-bottom: 8px;">Keep descriptions concise but clear</li>
-                        <li style="margin-bottom: 8px;">Export monthly backups to Google Drive</li>
-                        <li style="margin-bottom: 8px;">Use filters to focus on active or blocked projects</li>
-                        <li>View the Timeline to spot overlapping projects or resource conflicts</li>
+                    <h3>✏️ Project Details</h3>
+                    <p>Select a project to view and edit all information including:</p>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Project description and metadata</li>
+                        <li>KPIs and success metrics</li>
+                        <li>Subtasks with owner and status</li>
+                        <li>Decisions and notes</li>
+                        <li>Reference documents</li>
+                        <li>Working notes (scratch pad)</li>
                     </ul>
                 </div>
 
-                <div class="detail-section" style="background: #E6F1FB;">
-                    <p style="margin: 0; font-size: 13px; color: #185FA5;"><strong>Data Storage:</strong> This tracker saves all data locally in your browser. The data is yours and never leaves your computer. Export regularly to Google Drive for backup and team sharing.</p>
+                <div class="detail-section">
+                    <h3>➕ Adding Items</h3>
+                    <p>In the Project Details view, click "Add [Item Type]" buttons to add:</p>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>Subtasks</strong> - Assign to team members, track status</li>
+                        <li><strong>KPIs</strong> - Track target vs. actual metrics</li>
+                        <li><strong>Decisions</strong> - Log important decisions with dates</li>
+                        <li><strong>References</strong> - Link to relevant documents</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>💾 Data Management</h3>
+                    <p><strong>Export:</strong> Click "↓ Export" to download all data as JSON</p>
+                    <p><strong>Import:</strong> Click "↑ Import" to load previously exported JSON</p>
+                    <p><strong>Sync with team:</strong> Export your changes and share the JSON file. Team members can import to get the latest updates.</p>
+                </div>
+
+                <div class="detail-section" style="background: #e6f1fb; border-left: 4px solid #185FA5;">
+                    <p style="margin: 0; color: #185FA5;"><strong>💡 Tip:</strong> All changes save automatically to your browser. Export regularly to Google Drive as backup!</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal for new/edit project -->
+    <!-- Modal: New/Edit Project -->
     <div id="newProject" class="modal">
         <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('newProject')">✕</button>
             <h2 style="margin-bottom: 16px;">New Project</h2>
             <form onsubmit="saveProject(event)">
                 <div class="form-row">
@@ -304,13 +208,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="projectPriority"> Priority for this quarter
-                    </label>
+                    <label><input type="checkbox" id="projectPriority" style="width: auto; margin-right: 6px;"> Priority for this quarter</label>
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <textarea id="projectDescription" rows="4"></textarea>
+                    <textarea id="projectDescription" rows="3"></textarea>
                 </div>
                 <div class="button-group">
                     <button type="submit" class="primary">Save Project</button>
@@ -332,21 +234,11 @@
                 priority: true,
                 expectedCompletion: "2026-07-15",
                 description: "Migrating customer support infrastructure to modern cloud platform",
-                kpis: [
-                    { metric: "Migration Complete", target: "100%", actual: "75%" },
-                    { metric: "Downtime", target: "0 hours", actual: "0.5 hours" }
-                ],
-                subtasks: [
-                    { id: 1, task: "Data migration scripts", owner: "Alex Rivera", support: "Tech Ops", status: "Complete", dueDate: "2026-06-01", notes: "Completed ahead of schedule" },
-                    { id: 2, task: "User training materials", owner: "Jamie Lee", support: "Training", status: "In Progress", dueDate: "2026-06-15", notes: "80% complete" }
-                ],
-                references: [
-                    { name: "Architecture Design Doc", link: "https://docs.example.com/platform-arch" }
-                ],
-                decisions: [
-                    { date: "2026-05-10", note: "Decided to phase migration in 3 waves", decision: "Approved" }
-                ],
-                scratchpad: "Consider post-launch support staffing needs. Onboarding automation might be worth exploring."
+                kpis: [{ id: 1, metric: "Migration Complete", target: "100%", actual: "75%" }],
+                subtasks: [{ id: 1, task: "Data migration scripts", owner: "Alex Rivera", support: "Tech Ops", status: "Complete", dueDate: "2026-06-01" }],
+                references: [],
+                decisions: [],
+                scratchpad: ""
             },
             {
                 id: 2,
@@ -368,135 +260,326 @@
 
         function saveProjects() {
             localStorage.setItem('csProjects', JSON.stringify(projects));
-        }
-
-        function switchTab(tab) {
-            document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(tab + '-tab').style.display = 'block';
-            event.target.classList.add('active');
-
-            if (tab === 'gantt') renderGantt();
-            if (tab === 'detail') populateProjectSelect();
-            if (tab === 'help') {} // Help tab doesn't need special loading
-        }
-
-        function renderDashboard() {
-            const dashboard = document.getElementById('dashboard');
-            dashboard.innerHTML = projects.map(p => `
-                <div class="project-card" onclick="viewProject(${p.id})">
-                    <div class="project-header">
-                        <div class="project-name">${p.name}</div>
-                        ${p.priority ? '<span class="badge badge-priority">Priority</span>' : ''}
-                    </div>
-                    <div class="project-meta">${p.requester}</div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
-                        <span class="badge" style="background: ${getPhaseColor(p.phase)}22; color: ${getPhaseColor(p.phase)};">${p.phase}</span>
-                        ${p.owner ? `<span class="badge" style="background: #f1efe8; color: #888780;">${p.owner}</span>` : ''}
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${calculateProgress(p)}%"></div>
-                    </div>
-                    <div class="project-meta">Due: ${new Date(p.expectedCompletion).toLocaleDateString()}</div>
-                    <button style="margin-top: 8px; width: 100%; background: #f1efe8; color: #2c2c2a; font-size: 12px;" onclick="event.stopPropagation(); editProject(${p.id})">Edit</button>
-                </div>
-            `).join('');
+            renderDashboard();
+            populateProjectSelect();
         }
 
         function getPhaseColor(phase) {
-            const colors = { 'Discovery': '#378ADD', 'Building/Execution': '#639922', 'Reviewing': '#BA7517', 'Blocked': '#E24B4A', 'Passed': '#5F5E5A', 'Pending': '#888780', 'Completed': '#0F6E56' };
+            const colors = { 'Discovery': '#378ADD', 'Building/Execution': '#639922', 'Reviewing': '#BA7517', 'Blocked': '#E24B4A', 'Pending': '#888780', 'Completed': '#0F6E56' };
             return colors[phase] || '#5F5E5A';
         }
 
-        function calculateProgress(project) {
-            if (project.phase === 'Completed') return 100;
-            if (project.phase === 'Blocked' || project.phase === 'Pending') return 10;
-            if (project.phase === 'Discovery') return 25;
-            if (project.phase === 'Building/Execution') return 60;
-            if (project.phase === 'Reviewing') return 85;
-            return 50;
+        function calculateProgress(p) {
+            if (p.phase === 'Completed') return 100;
+            if (p.phase === 'Discovery') return 25;
+            if (p.phase === 'Building/Execution') return 60;
+            if (p.phase === 'Reviewing') return 85;
+            return 40;
         }
 
-        function applyFilters() {
-            const phaseSelect = document.querySelector('.filter-group select:nth-of-type(1)');
-            const typeSelect = document.querySelector('.filter-group select:nth-of-type(2)');
-            const phase = phaseSelect.value;
-            const type = typeSelect.value;
-
+        function renderDashboard() {
+            const phaseFilter = document.querySelector('.filter-group select').value;
             let filtered = projects;
-            if (phase) filtered = filtered.filter(p => p.phase === phase);
-            if (type === 'priority') filtered = filtered.filter(p => p.priority);
-            if (type === 'active') filtered = filtered.filter(p => !['Completed', 'Passed'].includes(p.phase));
+            if (phaseFilter) filtered = filtered.filter(p => p.phase === phaseFilter);
 
-            document.getElementById('dashboard').innerHTML = filtered.map(p => `
-                <div class="project-card" onclick="viewProject(${p.id})">
+            const dash = document.getElementById('dashboard');
+            dash.innerHTML = filtered.map(p => `
+                <div class="project-card" onclick="viewProjectModal(${p.id})">
                     <div class="project-header">
                         <div class="project-name">${p.name}</div>
                         ${p.priority ? '<span class="badge badge-priority">Priority</span>' : ''}
                     </div>
-                    <div class="project-meta">${p.requester}</div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                    <div style="font-size: 12px; color: #888780; margin: 8px 0;">${p.requester}</div>
+                    <div style="margin: 8px 0;">
                         <span class="badge" style="background: ${getPhaseColor(p.phase)}22; color: ${getPhaseColor(p.phase)};">${p.phase}</span>
-                        ${p.owner ? `<span class="badge" style="background: #f1efe8; color: #888780;">${p.owner}</span>` : ''}
                     </div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: ${calculateProgress(p)}%"></div>
                     </div>
-                    <div class="project-meta">Due: ${new Date(p.expectedCompletion).toLocaleDateString()}</div>
-                    <button style="margin-top: 8px; width: 100%; background: #f1efe8; color: #2c2c2a; font-size: 12px;" onclick="event.stopPropagation(); editProject(${p.id})">Edit</button>
+                    <div style="font-size: 12px; color: #888780; margin-top: 8px;">Due: ${new Date(p.expectedCompletion).toLocaleDateString()}</div>
+                    <div style="margin-top: 8px; display: flex; gap: 4px;">
+                        <button style="flex: 1; font-size: 12px;" onclick="event.stopPropagation(); switchTab('project'); selectProject(${p.id})">Edit</button>
+                        <button class="danger" style="flex: 1; font-size: 12px;" onclick="event.stopPropagation(); deleteProject(${p.id})">Delete</button>
+                    </div>
                 </div>
             `).join('');
         }
 
-        function viewProject(id) {
+        function viewProjectModal(id) {
             const project = projects.find(p => p.id === id);
-            const modal = document.createElement('div');
-            modal.className = 'modal show';
-            modal.innerHTML = `
-                <div class="modal-content" style="width: 95%; max-width: 900px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <h2 style="margin: 0;">${project.name}</h2>
-                        <button onclick="this.closest('.modal').remove()">✕</button>
-                    </div>
-                    <div class="detail-view">
+            switchTab('project');
+            selectProject(id);
+        }
+
+        function populateProjectSelect() {
+            const select = document.getElementById('projectSelect');
+            select.innerHTML = '<option value="">Choose a project...</option>' + projects.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+        }
+
+        function selectProject(id) {
+            document.getElementById('projectSelect').value = id;
+            loadProject();
+        }
+
+        function loadProject() {
+            const id = parseInt(document.getElementById('projectSelect').value);
+            if (!id) { document.getElementById('projectDetail').innerHTML = ''; return; }
+            const p = projects.find(proj => proj.id === id);
+
+            document.getElementById('projectDetail').innerHTML = `
+                <div class="detail-view">
+                    <div style="margin-bottom: 16px; display: flex; gap: 8px; justify-content: space-between; align-items: center;">
                         <div>
-                            <div class="detail-section">
-                                <p>${project.description}</p>
-                            </div>
-                            ${project.kpis.length > 0 ? `<div class="detail-section"><h2>KPIs & Metrics</h2><div class="kpi-grid">${project.kpis.map(k => `<div class="kpi-card"><div class="kpi-label">${k.metric}</div><div class="kpi-value">Target: ${k.target}</div><div>Actual: ${k.actual}</div></div>`).join('')}</div></div>` : ''}
-                            ${project.subtasks.length > 0 ? `<div class="detail-section"><h2>Subtasks</h2><table><thead><tr><th>Task</th><th>Owner</th><th>Status</th></tr></thead><tbody>${project.subtasks.map(t => `<tr><td>${t.task}</td><td>${t.owner}</td><td><span class="status-badge status-${t.status.toLowerCase().replace(' ', '')}">${t.status}</span></td></tr>`).join('')}</tbody></table></div>` : ''}
-                            ${project.decisions.length > 0 ? `<div class="detail-section"><h2>Decisions</h2>${project.decisions.map(d => `<div class="note-item"><strong>${new Date(d.date).toLocaleDateString()}:</strong> ${d.note}</div>`).join('')}</div>` : ''}
-                            ${project.scratchpad ? `<div class="detail-section"><h2>Scratch Pad</h2><div class="scratchpad">${project.scratchpad}</div></div>` : ''}
+                            <h2 style="font-size: 20px; margin-bottom: 4px;">${p.name}</h2>
+                            <p style="font-size: 12px; color: #888780; margin: 0;">${p.requester}</p>
                         </div>
-                        <div class="detail-sidebar">
-                            <div class="meta-grid">
-                                <div class="meta-item"><span class="meta-label">Phase</span><strong>${project.phase}</strong></div>
-                                <div class="meta-item"><span class="meta-label">Owner</span><strong>${project.owner || '—'}</strong></div>
-                                <div class="meta-item"><span class="meta-label">Stakeholder</span><strong>${project.stakeholder || '—'}</strong></div>
-                                <div class="meta-item"><span class="meta-label">Due Date</span><strong>${new Date(project.expectedCompletion).toLocaleDateString()}</strong></div>
-                                <div class="meta-item"><span class="meta-label">Priority</span><strong>${project.priority ? 'Yes' : 'No'}</strong></div>
-                                <div class="meta-item"><span class="meta-label">Progress</span><strong>${calculateProgress(project)}%</strong></div>
-                            </div>
-                            <button onclick="editProject(${project.id})" style="width: 100%; margin-top: 16px; background: #185FA5; color: white; border-color: #185FA5;">Edit Project</button>
+                        <button onclick="editProjectForm(${p.id})" class="primary" style="width: auto;">Edit Project</button>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Project Info</h3>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; font-size: 13px;">
+                            <div><strong>Phase:</strong> ${p.phase}</div>
+                            <div><strong>Owner:</strong> ${p.owner || '—'}</div>
+                            <div><strong>Stakeholder:</strong> ${p.stakeholder || '—'}</div>
+                            <div><strong>Due:</strong> ${new Date(p.expectedCompletion).toLocaleDateString()}</div>
+                            <div><strong>Priority:</strong> ${p.priority ? 'Yes' : 'No'}</div>
+                            <div><strong>Progress:</strong> ${calculateProgress(p)}%</div>
                         </div>
+                        <p style="margin-top: 12px; font-size: 13px; color: #2c2c2a;">${p.description}</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>KPIs & Metrics <button onclick="showModal('addKPI_${p.id}')" style="float: right; padding: 4px 12px; font-size: 12px;">+ Add KPI</button></h3>
+                        ${p.kpis.length ? p.kpis.map(k => `
+                            <div class="kpi-item">
+                                <strong>${k.metric}</strong><br>
+                                Target: ${k.target} | Actual: ${k.actual}
+                                <div class="action-buttons">
+                                    <button onclick="deleteKPI(${p.id}, ${k.id})">Delete</button>
+                                </div>
+                            </div>
+                        `).join('') : '<p style="color: #888780; font-size: 12px;">No KPIs yet</p>'}
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Subtasks <button onclick="showModal('addTask_${p.id}')" style="float: right; padding: 4px 12px; font-size: 12px;">+ Add Subtask</button></h3>
+                        ${p.subtasks.length ? p.subtasks.map(t => `
+                            <div class="task-item">
+                                <div class="task-info">
+                                    <strong>${t.task}</strong>
+                                    <div class="task-owner">Owner: ${t.owner} | Support: ${t.support}</div>
+                                    <div style="margin-top: 4px;">
+                                        <span class="task-status status-${t.status.toLowerCase().replace(' ', '')}">${t.status}</span>
+                                        <span style="font-size: 12px; color: #888780; margin-left: 8px;">Due: ${new Date(t.dueDate).toLocaleDateString()}</span>
+                                    </div>
+                                </div>
+                                <div class="action-buttons">
+                                    <button onclick="deleteSubtask(${p.id}, ${t.id})">Delete</button>
+                                </div>
+                            </div>
+                        `).join('') : '<p style="color: #888780; font-size: 12px;">No subtasks yet</p>'}
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Decisions & Notes <button onclick="showModal('addDecision_${p.id}')" style="float: right; padding: 4px 12px; font-size: 12px;">+ Add Decision</button></h3>
+                        ${p.decisions.length ? p.decisions.map(d => `
+                            <div class="task-item">
+                                <div>
+                                    <strong>${new Date(d.date).toLocaleDateString()}</strong><br>
+                                    ${d.note}
+                                </div>
+                                <button onclick="deleteDecision(${p.id}, ${d.id})">Delete</button>
+                            </div>
+                        `).join('') : '<p style="color: #888780; font-size: 12px;">No decisions logged yet</p>'}
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Reference Documents <button onclick="showModal('addReference_${p.id}')" style="float: right; padding: 4px 12px; font-size: 12px;">+ Add Reference</button></h3>
+                        ${p.references.length ? p.references.map(r => `
+                            <div class="task-item">
+                                <a href="${r.link}" target="_blank" style="color: #185FA5; text-decoration: none; flex: 1;">${r.name}</a>
+                                <button onclick="deleteReference(${p.id}, ${r.id})">Delete</button>
+                            </div>
+                        `).join('') : '<p style="color: #888780; font-size: 12px;">No references yet</p>'}
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Scratch Pad</h3>
+                        <textarea id="scratchpad_${p.id}" class="scratchpad" placeholder="Add working notes here...">${p.scratchpad}</textarea>
+                        <button onclick="saveScratchpad(${p.id})" style="margin-top: 8px;">Save Notes</button>
+                    </div>
+                </div>
+
+                ${createModals(p)}
+            `;
+        }
+
+        function createModals(p) {
+            return `
+                <div id="addKPI_${p.id}" class="modal">
+                    <div class="modal-content">
+                        <button class="close-btn" onclick="closeModal('addKPI_${p.id}')">✕</button>
+                        <h3>Add KPI</h3>
+                        <form onsubmit="addKPI(event, ${p.id})">
+                            <div class="form-group"><label>Metric Name</label><input type="text" id="kpi_name_${p.id}" required></div>
+                            <div class="form-group"><label>Target</label><input type="text" id="kpi_target_${p.id}" required></div>
+                            <div class="form-group"><label>Actual</label><input type="text" id="kpi_actual_${p.id}" required></div>
+                            <div class="button-group"><button type="submit" class="primary">Add KPI</button><button type="button" onclick="closeModal('addKPI_${p.id}')">Cancel</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div id="addTask_${p.id}" class="modal">
+                    <div class="modal-content">
+                        <button class="close-btn" onclick="closeModal('addTask_${p.id}')">✕</button>
+                        <h3>Add Subtask</h3>
+                        <form onsubmit="addSubtask(event, ${p.id})">
+                            <div class="form-group"><label>Task Name</label><input type="text" id="task_name_${p.id}" required></div>
+                            <div class="form-group"><label>Owner</label><input type="text" id="task_owner_${p.id}"></div>
+                            <div class="form-group"><label>Support Team</label><input type="text" id="task_support_${p.id}"></div>
+                            <div class="form-group"><label>Status</label><select id="task_status_${p.id}"><option>Pending</option><option>In Progress</option><option>Complete</option></select></div>
+                            <div class="form-group"><label>Due Date</label><input type="date" id="task_due_${p.id}"></div>
+                            <div class="button-group"><button type="submit" class="primary">Add Task</button><button type="button" onclick="closeModal('addTask_${p.id}')">Cancel</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div id="addDecision_${p.id}" class="modal">
+                    <div class="modal-content">
+                        <button class="close-btn" onclick="closeModal('addDecision_${p.id}')">✕</button>
+                        <h3>Log Decision</h3>
+                        <form onsubmit="addDecision(event, ${p.id})">
+                            <div class="form-group"><label>Date</label><input type="date" id="decision_date_${p.id}" required value="${new Date().toISOString().split('T')[0]}"></div>
+                            <div class="form-group"><label>Decision/Note</label><textarea id="decision_note_${p.id}" rows="3" required></textarea></div>
+                            <div class="button-group"><button type="submit" class="primary">Log Decision</button><button type="button" onclick="closeModal('addDecision_${p.id}')">Cancel</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div id="addReference_${p.id}" class="modal">
+                    <div class="modal-content">
+                        <button class="close-btn" onclick="closeModal('addReference_${p.id}')">✕</button>
+                        <h3>Add Reference</h3>
+                        <form onsubmit="addReference(event, ${p.id})">
+                            <div class="form-group"><label>Document Name</label><input type="text" id="ref_name_${p.id}" required></div>
+                            <div class="form-group"><label>Link/URL</label><input type="text" id="ref_link_${p.id}" required></div>
+                            <div class="button-group"><button type="submit" class="primary">Add Reference</button><button type="button" onclick="closeModal('addReference_${p.id}')">Cancel</button></div>
+                        </form>
                     </div>
                 </div>
             `;
-            document.body.appendChild(modal);
-            modal.onclick = (e) => e.target === modal && modal.remove();
         }
 
-        function editProject(id) {
-            const project = projects.find(p => p.id === id);
-            document.getElementById('projectName').value = project.name;
-            document.getElementById('projectPhase').value = project.phase;
-            document.getElementById('projectRequester').value = project.requester;
-            document.getElementById('projectStakeholder').value = project.stakeholder;
-            document.getElementById('projectOwner').value = project.owner;
-            document.getElementById('projectCompletion').value = project.expectedCompletion;
-            document.getElementById('projectPriority').checked = project.priority;
-            document.getElementById('projectDescription').value = project.description;
-            document.querySelector('#newProject h2').textContent = 'Edit Project';
+        function addKPI(e, projectId) {
+            e.preventDefault();
+            const p = projects.find(proj => proj.id === projectId);
+            const newId = Math.max(0, ...p.kpis.map(k => k.id)) + 1;
+            p.kpis.push({
+                id: newId,
+                metric: document.getElementById(`kpi_name_${projectId}`).value,
+                target: document.getElementById(`kpi_target_${projectId}`).value,
+                actual: document.getElementById(`kpi_actual_${projectId}`).value
+            });
+            saveProjects();
+            closeModal(`addKPI_${projectId}`);
+            loadProject();
+        }
+
+        function addSubtask(e, projectId) {
+            e.preventDefault();
+            const p = projects.find(proj => proj.id === projectId);
+            const newId = Math.max(0, ...p.subtasks.map(t => t.id)) + 1;
+            p.subtasks.push({
+                id: newId,
+                task: document.getElementById(`task_name_${projectId}`).value,
+                owner: document.getElementById(`task_owner_${projectId}`).value,
+                support: document.getElementById(`task_support_${projectId}`).value,
+                status: document.getElementById(`task_status_${projectId}`).value,
+                dueDate: document.getElementById(`task_due_${projectId}`).value
+            });
+            saveProjects();
+            closeModal(`addTask_${projectId}`);
+            loadProject();
+        }
+
+        function addDecision(e, projectId) {
+            e.preventDefault();
+            const p = projects.find(proj => proj.id === projectId);
+            const newId = Math.max(0, ...p.decisions.map(d => d.id)) + 1;
+            p.decisions.push({
+                id: newId,
+                date: document.getElementById(`decision_date_${projectId}`).value,
+                note: document.getElementById(`decision_note_${projectId}`).value
+            });
+            saveProjects();
+            closeModal(`addDecision_${projectId}`);
+            loadProject();
+        }
+
+        function addReference(e, projectId) {
+            e.preventDefault();
+            const p = projects.find(proj => proj.id === projectId);
+            const newId = Math.max(0, ...p.references.map(r => r.id)) + 1;
+            p.references.push({
+                id: newId,
+                name: document.getElementById(`ref_name_${projectId}`).value,
+                link: document.getElementById(`ref_link_${projectId}`).value
+            });
+            saveProjects();
+            closeModal(`addReference_${projectId}`);
+            loadProject();
+        }
+
+        function saveScratchpad(projectId) {
+            const p = projects.find(proj => proj.id === projectId);
+            p.scratchpad = document.getElementById(`scratchpad_${projectId}`).value;
+            saveProjects();
+            alert('Scratch pad saved!');
+        }
+
+        function deleteKPI(projectId, kpiId) {
+            const p = projects.find(proj => proj.id === projectId);
+            p.kpis = p.kpis.filter(k => k.id !== kpiId);
+            saveProjects();
+            loadProject();
+        }
+
+        function deleteSubtask(projectId, taskId) {
+            const p = projects.find(proj => proj.id === projectId);
+            p.subtasks = p.subtasks.filter(t => t.id !== taskId);
+            saveProjects();
+            loadProject();
+        }
+
+        function deleteDecision(projectId, decisionId) {
+            const p = projects.find(proj => proj.id === projectId);
+            p.decisions = p.decisions.filter(d => d.id !== decisionId);
+            saveProjects();
+            loadProject();
+        }
+
+        function deleteReference(projectId, refId) {
+            const p = projects.find(proj => proj.id === projectId);
+            p.references = p.references.filter(r => r.id !== refId);
+            saveProjects();
+            loadProject();
+        }
+
+        function deleteProject(id) {
+            if (confirm('Delete this project?')) {
+                projects = projects.filter(p => p.id !== id);
+                saveProjects();
+            }
+        }
+
+        function editProjectForm(id) {
+            const p = projects.find(proj => proj.id === id);
+            document.getElementById('projectName').value = p.name;
+            document.getElementById('projectPhase').value = p.phase;
+            document.getElementById('projectRequester').value = p.requester;
+            document.getElementById('projectStakeholder').value = p.stakeholder;
+            document.getElementById('projectOwner').value = p.owner;
+            document.getElementById('projectCompletion').value = p.expectedCompletion;
+            document.getElementById('projectPriority').checked = p.priority;
+            document.getElementById('projectDescription').value = p.description;
             document.getElementById('newProject').setAttribute('data-edit-id', id);
             showModal('newProject');
         }
@@ -504,7 +587,7 @@
         function saveProject(e) {
             e.preventDefault();
             const editId = document.getElementById('newProject').getAttribute('data-edit-id');
-            const projectData = {
+            const data = {
                 name: document.getElementById('projectName').value,
                 phase: document.getElementById('projectPhase').value,
                 requester: document.getElementById('projectRequester').value,
@@ -516,47 +599,25 @@
             };
 
             if (editId) {
-                const project = projects.find(p => p.id == editId);
-                Object.assign(project, projectData);
+                const p = projects.find(proj => proj.id == editId);
+                Object.assign(p, data);
             } else {
-                projects.push({ id: Date.now(), ...projectData, kpis: [], subtasks: [], references: [], decisions: [], scratchpad: '' });
+                projects.push({ id: Date.now(), ...data, kpis: [], subtasks: [], references: [], decisions: [], scratchpad: '' });
             }
 
             saveProjects();
-            renderDashboard();
             closeModal('newProject');
             document.getElementById('newProject').removeAttribute('data-edit-id');
+            document.getElementById('newProject').querySelector('h2').textContent = 'New Project';
         }
 
-        function renderGantt() {
-            const gantt = document.getElementById('gantt-chart');
-            const now = new Date();
-            const startDate = new Date(now.getFullYear(), 0, 1);
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tab + '-tab').style.display = 'block';
+            event.target.classList.add('active');
 
-            gantt.innerHTML = projects.filter(p => p.expectedCompletion).map(p => {
-                const endDate = new Date(p.expectedCompletion);
-                const duration = Math.max(1, Math.round((endDate - startDate) / (1000 * 60 * 60 * 24 / 30)));
-                const startOffset = Math.round((new Date(p.expectedCompletion) - new Date()) / (1000 * 60 * 60 * 24 * 30));
-                return `
-                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                        <div class="gantt-label" style="border-bottom: 0.5px solid #d3d1c7;">${p.name}</div>
-                        <div class="gantt-timeline" style="border-bottom: 0.5px solid #d3d1c7;">
-                            <div class="gantt-bar" style="width: ${Math.max(50, duration * 50)}px; left: ${Math.max(0, startOffset * 50)}px; background: ${getPhaseColor(p.phase)};"></div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function populateProjectSelect() {
-            const select = document.getElementById('projectSelect');
-            select.innerHTML = '<option value="">Choose project...</option>' + projects.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
-        }
-
-        function loadProjectDetail() {
-            const id = document.getElementById('projectSelect').value;
-            if (!id) return;
-            viewProject(parseInt(id));
+            if (tab === 'project') populateProjectSelect();
         }
 
         function showModal(id) {
@@ -584,16 +645,16 @@
                 try {
                     projects = JSON.parse(e.target.result);
                     saveProjects();
-                    renderDashboard();
                     alert('Data imported successfully!');
                 } catch (err) {
-                    alert('Error importing file: ' + err.message);
+                    alert('Error importing: ' + err.message);
                 }
             };
             reader.readAsText(file);
         }
 
         renderDashboard();
+        populateProjectSelect();
     </script>
 </body>
 </html>
